@@ -1,0 +1,34 @@
+[
+  {
+    "nombre": "Amigos academico",
+    "riesgo": "academico"
+  },
+  {
+    "nombre": "Tutor academico",
+    "riesgo": "academico"
+  },
+  {
+    "nombre": "Servicio de almuerzo",
+    "riesgo": "socioeconomico"
+  },
+  {
+    "nombre": "Beca trabajo",
+    "riesgo": "socioeconomico"
+  },
+  {
+    "nombre": "Equipo de la Universidad",
+    "riesgo": "institucional"
+  },
+  {
+    "nombre": "Equipo de investigacion",
+    "riesgo": "institucional"
+  },
+  {
+    "nombre": "Servicio de Psicologia",
+    "riesgo": "individual"
+  },
+  {
+    "nombre": "Servicio medico",
+    "riesgo": "individual"
+  }
+]

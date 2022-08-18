@@ -1,0 +1,65 @@
+[
+  {
+    "role": "vicerrector",
+    "schedule": {
+      "morningStart": "08:00",
+      "morningEnd": "12:00",
+      "afternoonStart": "14:00",
+      "afternoonEnd": "18:00"
+    }
+  },
+  {
+    "role": "estudiante",
+    "schedule": {
+      "morningStart": "08:00",
+      "morningEnd": "12:00",
+      "afternoonStart": "14:00",
+      "afternoonEnd": "18:00"
+    }
+  },
+  {
+    "role": "docente",
+    "schedule": {
+      "morningStart": "08:00",
+      "morningEnd": "12:00",
+      "afternoonStart": "14:00",
+      "afternoonEnd": "18:00"
+    }
+  },
+  {
+    "role": "jefe",
+    "schedule": {
+      "morningStart": "08:00",
+      "morningEnd": "12:00",
+      "afternoonStart": "14:00",
+      "afternoonEnd": "18:00"
+    }
+  },
+  {
+    "role": "psicologo",
+    "schedule": {
+      "morningStart": "08:00",
+      "morningEnd": "12:00",
+      "afternoonStart": "14:00",
+      "afternoonEnd": "18:00"
+    }
+  },
+  {
+    "role": "medico",
+    "schedule": {
+      "morningStart": "08:00",
+      "morningEnd": "12:00",
+      "afternoonStart": "14:00",
+      "afternoonEnd": "18:00"
+    }
+  },
+  {
+    "role": "odontologo",
+    "schedule": {
+      "morningStart": "08:00",
+      "morningEnd": "12:00",
+      "afternoonStart": "14:00",
+      "afternoonEnd": "18:00"
+    }
+  }
+]
