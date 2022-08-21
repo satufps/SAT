@@ -38,8 +38,63 @@ export class GoogleService {
   }
 
 
-   singInFireBase() {
-    return   this.fireBaseAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(console.log)
+ async singInFireBase(redirect_uri: string, rol: String, type?: String) {
+ try{
+  let user:any=null;
+     const res= await this.fireBaseAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(
+     );
+     user =res.additionalUserInfo.profile;
+     console.log(user,'datos')
+     
+//cambios
+       const emailAux =
+        type === 'teacher'
+          ? // ? 'matiashc@ufps.edu.co'
+            'juancarlosso@ufps.edu.co'
+          : 'judithdelpilarrt@ufps.edu.co';
+      const correo = user.email;
+      const domine = correo.split('@')[1];
+      if (domine === 'ufps.edu.co') {
+        const userAuth = {
+          correo: rol === 'student' ? correo : emailAux,
+          rol,
+        };
+        const res = await this.loginGoogle(userAuth, 'institutional');
+        if (res.ok) {
+          localStorage.setItem('x-token', res.token.toString());
+          showAlert('success', res.msg);
+          this.store.dispatch(new AddUserAction(res.data));
+          saveInLocalStorage('user-show', res.data);
+          this.router.navigate([`/${res.data.rol.toLowerCase()}`]);
+        } else {
+          showAlert('error', res.msg);
+          this.singOut();
+        }
+        this.subject.next(user);
+      } else {
+        showAlert(
+          'error',
+          'Debe ingresar con el correo institucional de la UFPS'
+        );
+        this.singOut();
+      }
+    } catch (error) {
+      console.error(error);
+      this.subject.next(null);
+    }
+
+
+
+
+
+
+
+
+  
+
+
+
+
   }
 
   async singIn(redirect_uri: string, rol: String, type?: String) {
@@ -101,7 +156,7 @@ export class GoogleService {
   }
 
   async singOut() {
-    await this.auth2.signOut();
+    // await this.auth2.signOut();
     this.subject.next(null);
   }
   

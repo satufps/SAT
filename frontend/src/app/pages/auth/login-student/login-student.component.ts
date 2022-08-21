@@ -35,26 +35,19 @@ export class LoginStudentComponent implements OnInit, OnDestroy {
     });
   }
 
-  signIn() {
-    this.loading = true;
-    const { protocol, host } = window.location;
-    this.googleService.singIn(
-      `${protocol}//${host}/estudiante/iniciar-sesion`,
-      'student'
-    );
-  }
+  // signIn() {
+  //   this.loading = true;
+  //   const { protocol, host } = window.location;
+  //   this.googleService.singIn(
+  //     `${protocol}//${host}/estudiante/iniciar-sesion`,
+  //     'student'
+  //   );
+  // }
   //Desarrollado por Niver Romero
    signInFireBase() {
-
-  console.log( this.googleService.singInFireBase());
-
-    console.log('Niver Romero')
-    // this.loading = true;
-    // const { protocol, host } = window.location;
-    // this.googleService.singIn(
-    //   `${protocol}//${host}/estudiante/iniciar-sesion`,
-    //   'student'
-    // );
+     const { protocol, host } = window.location;
+  console.log( this.googleService.singInFireBase(`${protocol}//${host}/estudiante/iniciar-sesion`,
+  'student'));
   }
 
   ngOnDestroy(): void {
