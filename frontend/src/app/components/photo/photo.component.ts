@@ -76,7 +76,6 @@ export class PhotoComponent implements OnInit, OnDestroy {
         userShow.foto = res.data;
         saveInLocalStorage('user-show', userShow);
       } else {
-        console.log(res.data);
         if (res.token) {
           this.store.dispatch(new UpdatePhotoUserAction(res.data));
           localStorage.setItem('x-token', res.token.toString());

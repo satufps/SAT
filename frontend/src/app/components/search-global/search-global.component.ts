@@ -17,7 +17,7 @@ export class SearchGlobalComponent implements OnInit {
 
   createFormSearch(): FormGroup {
     return new FormGroup({
-      filter: new FormControl('1151157', Validators.required),
+      filter: new FormControl('', Validators.required),
     });
   }
 

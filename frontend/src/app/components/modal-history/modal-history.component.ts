@@ -27,7 +27,7 @@ export class ModalHistoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.updateObservation();
-    console.log(this.meetPsychological);
+   
   }
 
   onClick({ target }) {

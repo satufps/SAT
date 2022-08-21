@@ -33,13 +33,11 @@ export class LoginComponent implements OnInit, OnDestroy {
       if (!this.user) {
         this.loading = false;
       }
-      // console.log(user);
       this.ref.detectChanges();
     });
   }
 
   signIn() {
-    console.log("niver");
     this.loading = true;
     const { protocol, host } = window.location;
     this.googleService.singIn(
@@ -50,14 +48,11 @@ export class LoginComponent implements OnInit, OnDestroy {
     
   }
   signInFireBase() {
-    this.loading = true;
     const { protocol, host } = window.location;
-    this.googleService.singIn(
-      `${protocol}//${host}/docente/iniciar-sesion`,
-      'teacher',
-      this.auxRole
-    );
-  }
+ this.googleService.singInFireBase(`${protocol}//${host}/docente/iniciar-sesion`,
+ 'teacher',
+ this.auxRole)
+ }
 
   changeRole(type: String = '') {
     if (type) {

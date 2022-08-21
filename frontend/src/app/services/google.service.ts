@@ -44,13 +44,11 @@ export class GoogleService {
      const res= await this.fireBaseAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(
      );
      user =res.additionalUserInfo.profile;
-     console.log(user,'datos')
      
 //cambios
        const emailAux =
         type === 'teacher'
-          ? // ? 'matiashc@ufps.edu.co'
-            'juancarlosso@ufps.edu.co'
+            ? 'matiashc@ufps.edu.co'
           : 'judithdelpilarrt@ufps.edu.co';
       const correo = user.email;
       const domine = correo.split('@')[1];

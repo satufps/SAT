@@ -31,7 +31,7 @@ export class InterceptorService implements HttpInterceptor {
     });
     return next.handle(reqClone).pipe(
       catchError((err: HttpErrorResponse) => {
-        console.log(err);
+      
         this.store.dispatch(new SetError('Ocurrio un error', '/'));
         this.router.navigate(['/error']);
         return throwError(err.message);
